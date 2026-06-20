@@ -12,9 +12,9 @@ export interface AISettings {
 }
 
 const DEFAULTS: AISettings = {
-  baseUrl: "https://api.openai.com/v1",
-  apiKey: "",
-  model: "gpt-4o-mini",
+  baseUrl: import.meta.env.VITE_GROQ_BASE_URL || "https://api.groq.com/openai/v1",
+  apiKey: import.meta.env.VITE_GROQ_API_KEY || "",
+  model: import.meta.env.VITE_GROQ_MODEL || "mixtral-8x7b-32768",
 };
 
 export function getAISettings(): AISettings {
